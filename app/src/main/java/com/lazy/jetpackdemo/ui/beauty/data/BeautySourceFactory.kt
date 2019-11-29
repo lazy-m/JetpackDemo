@@ -10,6 +10,7 @@ import com.lazy.jetpackdemo.utilities.Injection
 class BeautySourceFactory(val  api:Api=Injection.provideApi()):DataSource.Factory<Int,Beauty>(){
 
     val sourceLiveData = MutableLiveData<BeautyDataSource>()
+
     override fun create(): DataSource<Int, Beauty> {
         val source =BeautyDataSource(api)
         sourceLiveData.postValue(source)
