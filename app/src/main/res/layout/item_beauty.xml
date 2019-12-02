@@ -13,8 +13,8 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:scaleType="center"
             imageUrl ="@{beauty.url}"/>
     </com.google.android.material.card.MaterialCardView>
