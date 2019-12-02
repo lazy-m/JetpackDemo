@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             adapter.submitList(it)
         })
         rv_home.adapter =adapter
-        bt_paging.setOnClickListener { startActivity<BeautyActivity>() }
         bt_variety.setOnClickListener {
             rv_home.layoutManager = if (isLine) GridLayoutManager(this,2) else LinearLayoutManager(this)
             isLine = !isLine

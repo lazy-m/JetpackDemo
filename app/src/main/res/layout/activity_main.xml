@@ -14,14 +14,6 @@
         app:spanCount="2"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
     <Button
-        android:id="@+id/bt_paging"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="100dp"
-        android:layout_gravity="bottom|right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Paging"/>
-    <Button
         android:id="@+id/bt_variety"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="50dp"

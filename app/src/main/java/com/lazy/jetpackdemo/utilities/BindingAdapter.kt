@@ -1,10 +1,18 @@
 package com.lazy.jetpackdemo.utilities
 
 
+import android.content.Context
+import android.content.Intent
+import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.lazy.jetpackdemo.R
+import com.lazy.jetpackdemo.ui.beauty.BeautyActivity
+import com.lazy.jetpackdemo.ui.pagingShow.SongListActivity
+
 
 object BindingAdapter {
     @BindingAdapter("imageUrl" )
@@ -21,5 +29,21 @@ object BindingAdapter {
               .load(url)
               .error(R.mipmap.img_no)
               .into(view)
+    }
+
+    @BindingAdapter("onClick")
+    @JvmStatic fun onClick(view:View,id:String){
+        view.setOnClickListener {
+            val intent = Intent()
+            when(id){
+                "9" -> int(view.context, intent.setClass(view.context,BeautyActivity::class.java))
+                "6" -> int(view.context,intent.setClass(view.context,SongListActivity::class.java))
+                else -> Toast.makeText(view.context,"暂未开放",Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    fun int(context: Context,intent:Intent){
+        startActivity(context, intent, null)
     }
 }
